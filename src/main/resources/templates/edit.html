@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/edit}" method="post">
+    <input th:value="${stat.getId()}" name="id" type="hidden">
+    <input type="text" name="name" th:value="${stat.getName()}">
+    <select name="statmentStatus" >
+        <option th:each="status:${statuses}" th:value="${status}" th:text="${status.name()}"></option>
+    </select>
+    <button>save</button>
+</form>
+</body>
+</html>
